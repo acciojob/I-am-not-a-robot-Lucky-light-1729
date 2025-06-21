@@ -28,12 +28,13 @@ function shuffleAndRenderImages() {
   container.innerHTML = '';
 
   images.forEach((src, index) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.dataset.index = index;
-    img.addEventListener('click', () => handleImageClick(img));
-    container.appendChild(img);
-  });
+	  const img = document.createElement('img');
+	  img.src = src;
+	  img.dataset.index = index;
+	  img.classList.add(`img${index + 1}`); // Add .img1, .img2, ..., .img6
+	  img.addEventListener('click', () => handleImageClick(img));
+	  container.appendChild(img);
+	});
 
   resetBtn.style.display = 'none';
   verifyBtn.style.display = 'none';
